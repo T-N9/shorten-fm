@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { NavBar, Header, ShortenForm , Branding } from './components';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <main className='font-poppins overflow-x-hidden'>
+            <NavBar />
+            <Header />
+            <div className='bg-neutral-light-gray'>
+                <div className='relative top-[-5rem] mt-32'>
+                    <ShortenForm />
+                </div>
+                <Branding/>
+            </div>
+        </main>
+    );
 }
 
 export default App;
