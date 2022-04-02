@@ -74,7 +74,7 @@ const ShortenForm = () => {
 
     return (
         <>
-            <section className='max-w-[1108px] mx-auto p-4 mt-10'>
+            <section className='max-w-[1108px] mx-auto p-4 md:px-16 lg:p-4 mt-10'>
                 <div className='bg-neutral-vDarkBlue p-5 lg:p-10 rounded-lg bg-form-background lg:bg-form-bg-lg bg-no-repeat bg-cover bg-right-7 lg:bg-right'>
                     <form action="" className='lg:flex lg:items-center lg:justify-between'>
                         <div className=' lg:flex-[8]'>
@@ -97,7 +97,7 @@ const ShortenForm = () => {
                 </div>
             </section>
 
-            <div className='max-w-[1056px] mx-auto p-4 lg:p-0 mt-4'>
+            <div className='max-w-[1108px] mx-auto p-4 md:px-16 lg:p-0 mt-4'>
                 {
                     getShortenData.map(data => (
                         <div key={data.id} className="bg-white relative shadow rounded-md mb-6 lg:flex lg:justify-between lg:items-center">

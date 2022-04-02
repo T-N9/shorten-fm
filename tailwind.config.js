@@ -29,6 +29,8 @@ module.exports = {
       backgroundImage : {
         'form-background': "url('/src/images/bg-shorten-mobile.svg')",
         'form-bg-lg' : "url('/src/images/bg-shorten-desktop.svg')",
+        'boost-bg-sm': "url('/src/images/bg-boost-mobile.svg')",
+        'boost-bg-lg': "url('/src/images/bg-boost-desktop.svg')",
       },
       backgroundPosition : {
         'right-7': '7rem center ',

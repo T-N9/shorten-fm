@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Header, ShortenForm , Branding } from './components';
+import { NavBar, Header, ShortenForm , Branding, Boost, Footer } from './components';
 
 const App = () => {
     return (
@@ -12,6 +12,8 @@ const App = () => {
                 </div>
                 <Branding/>
             </div>
+            <Boost/>
+            <Footer/>
         </main>
     );
 }
