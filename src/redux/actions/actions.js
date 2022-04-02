@@ -16,3 +16,12 @@ export const linkCopied = (id) => {
         }
     }
 }
+
+export const linkDeleted = (id) => {
+    return {
+        type : 'DELETED_LINK',
+        payload: {
+            id
+        }
+    }
+}

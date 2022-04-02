@@ -14,7 +14,7 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className='py-[40px] px-[25px] max-w-[1056px] mx-auto flex justify-between items-center'>
+            <nav className='py-[40px] px-[25px] max-w-[1108px] mx-auto flex justify-between items-center'>
                 <div className='flex space-x-10'>
                     <img className='w-[121px] h-auto' src={logo} alt="Logo" />
                     <ul className=' font-bold text-neutral-grayViolet space-x-8 hidden lg:flex'>

@@ -3,7 +3,7 @@ import { headerIll } from '../images';
 
 const Header = () => {
     return (
-        <header className='flex flex-col max-w-[1056px] lg:min-h-[500px] mx-auto lg:flex-row-reverse p-4'>
+        <header className='flex flex-col max-w-[1108px] lg:min-h-[500px] mx-auto lg:flex-row-reverse p-4'>
             <div className=''>
                 <img className='scale-150 translate-x-[85px] lg:translate-x-[140px] translate-y-[15px] lg:translate-y-[90px]' src={headerIll} alt="Working illustration" />
             </div>
