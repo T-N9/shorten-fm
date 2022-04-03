@@ -6,6 +6,11 @@ html {
     scroll-behavior: smooth;
 }
 
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
 @layer components {
     .primary-btn {
         @apply bg-primary-cyan hover:bg-hover-cyan min-w-[100px] py-3 px-6 rounded-full text-white font-bold cursor-pointer;
