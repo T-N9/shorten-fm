@@ -17,9 +17,11 @@ const Header = () => {
                     on how your links are performing.
                 </p>
 
-                <button className='primary-btn'>
-                    Get Started
-                </button>
+                <a href='#shorten_here'>
+                    <button className='primary-btn'>
+                        Get Started
+                    </button>
+                </a>
             </div>
         </header>
     );

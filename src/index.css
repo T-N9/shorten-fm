@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 @layer components {
     .primary-btn {
         @apply bg-primary-cyan hover:bg-hover-cyan min-w-[100px] py-3 px-6 rounded-full text-white font-bold cursor-pointer;

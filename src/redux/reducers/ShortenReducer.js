@@ -5,13 +5,13 @@ let initialState = [];
 let getFromStorage = localStorage.getItem('shortenLinks');
 // console.log(JSON.parse(getFromStorage));
 
-if( getFromStorage !== null){
+if (getFromStorage !== null) {
     initialState = JSON.parse(getFromStorage);
     // console.log(initialState.length)
 }
 
 const shortenReducer = (state = initialState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'ADDED_LINK':
             return [
                 ...state,
@@ -19,17 +19,21 @@ const shortenReducer = (state = initialState, action) => {
                     id: ++initialState.length,
                     oriLink: action.payload.oriLink,
                     shortenLink: action.payload.shortenLink,
-                    copied : false
+                    copied: false
                 }
             ]
         case 'COPIED_LINK':
             return state.map(item => {
-                return item.id === action.payload.id ? { ...item, copied: true} : { ...item, copied: false}
-                
+                return item.id === action.payload.id ? { ...item, copied: true } : { ...item, copied: false }
+
             })
         case 'DELETED_LINK':
             return state.filter(item => {
                 return item.id !== action.payload.id
+            })
+        case 'RESOLVED_COPY':
+            return state.map(item => {
+                return { ...item, copied: false }
             })
         default:
             return state;

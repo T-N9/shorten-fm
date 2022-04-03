@@ -25,3 +25,9 @@ export const linkDeleted = (id) => {
         }
     }
 }
+
+export const copyResolved = () => {
+    return {
+        type : 'RESOLVED_COPY',
+    }
+}

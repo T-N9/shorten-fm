@@ -5,16 +5,30 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 
 const ShortenForm = () => {
 
+    /* ===============================
+        States
+    ============================= */
+    // input form state
     const [input, setInput] = useState('');
+    // input is valid or empty or invalid
     const [inputStatus, setInputStatus] = useState(true);
+    // to handle when input is invalid server respond with 400 and so on
     const [shortenLink, setShortenLink] = useState('');
+    // show user if input is invalid
     const [validation, setValidation] = useState(true);
+    // loading state when fetching data (shown in button)
+    const [ loading, setLoading] = useState(false);
 
     const dispatch = useDispatch();
+    // state get from redux
     const getShortenData = useSelector((state) => state)
 
+    /* ===============================
+        critical effects
+    ============================= */
+    // to handle if user input is invalid return from service api
+    // to dispatch user input and its shorten link to redux store
     useEffect(() => {
-
         if (shortenLink === undefined) {
             setValidation(false)
         } else {
@@ -22,37 +36,47 @@ const ShortenForm = () => {
                 dispatch(linkAdded(input, shortenLink));
             }
         }
-    }, [dispatch, shortenLink])
+    }, [dispatch, shortenLink]);
 
-    console.log(shortenLink, getShortenData);
+    // set storage every time this component rerender
+    // get data from redux to local storage
+    localStorage.setItem('shortenLinks', JSON.stringify(getShortenData));
+    // console.log(shortenLink, getShortenData);
 
+    // to handle user input is empty or not
     useEffect(() => {
         if (input !== '') {
             setInputStatus(true);
         }
-        localStorage.setItem('shortenLinks', JSON.stringify(getShortenData));
+        // localStorage.setItem('shortenLinks', JSON.stringify(getShortenData));
         // console.log('SetLocalStore');
     }, [input, getShortenData, inputStatus])
 
+    /* ===============================
+        Fetch api data
+    ============================= */
     const getShortenLink = async (link) => await fetch(`https://api.shrtco.de/v2/shorten?url=${link}`).then(res => {
         if (!res.ok) {
             throw Error("Something went wrong.");
         }
         return res.json()
     }).then(data => {
+        setLoading(false)
         setValidation(true)
         setShortenLink(data.result);
     }).catch(err => {
+        setLoading(false)
         setValidation(false)
         console.log('error')
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
         if (input === '') {
             setInputStatus(false);
         } else {
+            setLoading(true);
             setInputStatus(true);
             getShortenLink(input);
         }
@@ -74,7 +98,7 @@ const ShortenForm = () => {
 
     return (
         <>
-            <section className='max-w-[1108px] mx-auto p-4 md:px-16 lg:p-4 mt-10'>
+            <section id='shorten_here' className='max-w-[1108px] mx-auto p-4 md:px-16 lg:p-4 mt-10'>
                 <div className='bg-neutral-vDarkBlue p-5 lg:p-10 rounded-lg bg-form-background lg:bg-form-bg-lg bg-no-repeat bg-cover bg-right-7 lg:bg-right'>
                     <form action="" className='lg:flex lg:items-center lg:justify-between'>
                         <div className=' lg:flex-[8]'>
@@ -91,13 +115,15 @@ const ShortenForm = () => {
                         </div>
 
                         <button onClick={handleSubmit} className='secondary-btn mt-4 lg:mt-0 lg:flex-[2] lg:ml-10 text-lg'>
-                            Shorten It!
+                            {
+                                loading ? 'Shortening' : 'Shorten it!'
+                            }
                         </button>
                     </form>
                 </div>
             </section>
 
-            <div className='max-w-[1108px] mx-auto p-4 md:px-16 lg:p-0 mt-4'>
+            <div className='max-w-[1108px] mx-auto p-4 md:px-16 lg:p-4 mt-4'>
                 {
                     getShortenData.map(data => (
                         <div key={data.id} className="bg-white relative shadow rounded-md mb-6 lg:flex lg:justify-between lg:items-center">

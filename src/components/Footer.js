@@ -22,17 +22,17 @@ const Footer = () => {
                             </h1>
                     
                             <ul>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Link Shortening
                                     </a>
                                 </li>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Branded Links
                                     </a>
                                 </li>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Analytics
                                     </a>
@@ -46,17 +46,17 @@ const Footer = () => {
                             </h1>
                     
                             <ul>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Blog
                                     </a>
                                 </li>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Developers
                                     </a>
                                 </li>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Support
                                     </a>
@@ -70,22 +70,22 @@ const Footer = () => {
                             </h1>
                     
                             <ul>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         About
                                     </a>
                                 </li>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Our Team
                                     </a>
                                 </li>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Careers
                                     </a>
                                 </li>
-                                <li className='text-base mb-3 text-neutral-gray hover:text-primary-cyan'>
+                                <li className='text-base cursor-pointer mb-3 text-neutral-gray hover:text-primary-cyan'>
                                     <a href="">
                                         Contact
                                     </a>
