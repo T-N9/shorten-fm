@@ -127,7 +127,7 @@ const ShortenForm = () => {
                 {
                     getShortenData.map(data => (
                         <div key={data.id} className="bg-white relative shadow rounded-md mb-6 lg:flex lg:justify-between lg:items-center">
-                            <p className='text-neutral-vDarkViolet p-4 '>
+                            <p className='text-neutral-vDarkViolet p-4 break-words'>
                                 {data.oriLink}
                             </p>
 
